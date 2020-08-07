@@ -12,11 +12,14 @@ locationsRouter.route('/')
   next();
 })
 .get((req, res) => {
-  res.end('Will send all the campsites to you');
+  res.end('Showing all locations');
 })
-.put((req, res) => {
-  res.statusCode = 403;
-  res.end('PUT operation not supported on /campsites');
-});
+app.get('/:locationId', (req, res) => {
+  res.end(`Showing ${req.params.locationId} details`);
+})
+app.put('/:locationId', (req, res) => {
+  res.end(`Updating ${req.body.name} details`);
+})
+
 
 module.exports = locationsRouter;

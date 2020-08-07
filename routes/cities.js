@@ -12,7 +12,7 @@ citiesRouter.route('/')
   next();
 })
 .get((req, res) => {
-  res.end('Show cities');
+  res.end('Showing all cities');
 });
 
 module.exports = citiesRouter;

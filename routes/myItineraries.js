@@ -12,10 +12,10 @@ myItinerariesRouter.route('/')
   next();
 })
 .get((req, res) => {
-  res.end('Will send all the campsites to you');
+  res.end('Showing all itineraries');
 })
-.delete((req, res) => {
-  res.end('Deleting all campsites');
+.delete('/:itineraryId', (req, res) => {
+  res.end('Deleting itinerary ${req.params.itineraryId}');
 });
 
 module.exports = myItinerariesRouter;

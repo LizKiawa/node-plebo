@@ -12,7 +12,7 @@ contactRouter.route('/')
   next();
 })
 .get((req, res) => {
-  res.end('Show contact info');
+  res.end('Showing contact info');
 });
 
 module.exports = contactRouter;
