@@ -13,8 +13,15 @@ myItinerariesRouter.route('/')
 })
 .get((req, res) => {
   res.end('Showing all itineraries');
+});
+
+myItinerariesRouter.route('/:itineraryId')
+.all((req, res, next) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  next();
 })
-.delete('/:itineraryId', (req, res) => {
+.delete((req, res) => {
   res.end('Deleting itinerary ${req.params.itineraryId}');
 });
 

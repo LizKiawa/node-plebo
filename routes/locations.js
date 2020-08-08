@@ -13,13 +13,20 @@ locationsRouter.route('/')
 })
 .get((req, res) => {
   res.end('Showing all locations');
+});
+
+locationsRouter.route('/:locationId')
+.all((req, res, next) => {  //removed app, path and semicolon at the end
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  next();
 })
-app.get('/:locationId', (req, res) => {
+get((req, res) => {
   res.end(`Showing ${req.params.locationId} details`);
 })
-app.put('/:locationId', (req, res) => {
+put((req, res) => {
   res.end(`Updating ${req.body.name} details`);
-})
+});
 
 
 module.exports = locationsRouter;
